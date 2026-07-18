@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Територія Сили — тренажерний зал у Бродах</title>
+<meta name="description" content="Тренажерний зал «Територія Сили» у Бродах: вільна вага, гантелі до 50 кг, армреслінг-зона, тренери, дієтолог, спортпит. Абонементи, пакет «Ветеранський спорт». Заходь слабким — виходь сильним.">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' fill='%230D0D0D'/%3E%3Ccircle cx='18' cy='18' r='13' fill='none' stroke='%23EDEAE3' stroke-width='4'/%3E%3Ccircle cx='18' cy='18' r='5' fill='%23E8471C'/%3E%3C/svg%3E">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Територія Сили — тренажерний зал у Бродах">
+<meta property="og:description" content="Вільна вага, армреслінг-зона, тренери, дієтолог. Абонементи від 700 грн/міс. Пакет «Ветеранський спорт».">
+<meta property="og:locale" content="uk_UA">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header">
+  <a href="#hero" class="brand">
+    <svg width="34" height="34" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" fill="none" stroke="#EDEAE3" stroke-width="4"></circle><circle cx="18" cy="18" r="5.5" fill="#E8471C"></circle></svg>
+    <span class="brand__name">ТЕРИТОРІЯ<br>СИЛИ</span>
+  </a>
+  <nav class="main-nav" id="main-nav" aria-label="Основна навігація">
+    <a href="#zal">Зал</a><a href="#abonementy">Абонементи</a><a href="#trenuvannya">Тренування</a><a href="#boks">Бокс</a><a href="#dietolog">Дієтолог</a><a href="#sportpit">Спортпит</a><a href="#grafik">Графік</a><a href="#kontakty">Контакти</a>
+    <a href="tel:+380670000000" class="main-nav__phone">+380 67 000 00 00</a>
+  </nav>
+  <a href="tel:+380670000000" class="header-phone">+380 67 000 00 00</a>
+  <button type="button" class="header-cta" data-open="buy">Обрати абонемент</button>
+  <button type="button" class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="main-nav">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section id="hero" class="hero">
+  <div class="hero__rail">
+    <div class="hero__geo">м. Броди · 50.0847° N, 25.1507° E</div>
+    <div class="hero__dot"></div>
+  </div>
+  <div class="hero__body">
+    <div class="hero__badges">
+      <span class="badge-solid">Відкриття 2026</span>
+      <span class="badge-outline">Ветеранський спорт</span>
+      <span class="badge-outline">Бокс · Армреслінг · Вільні ваги</span>
+    </div>
+    <h1 class="hero__title">Твій зал у Бродах,<br>щоб ставати<br><mark>сильнішим</mark></h1>
+    <p class="hero__lead">100+ м² для силових тренувань, 60+ одиниць нового обладнання, боксерський куток, армреслінг і тренери, які допоможуть почати. Приходь із будь-яким рівнем підготовки.</p>
+    <div class="hero__actions">
+      <button type="button" class="btn btn--primary btn--lg" data-open="buy">Обрати абонемент</button>
+      <button type="button" class="btn btn--outline-yellow btn--lg" data-open="first">Записатися на перше тренування</button>
+    </div>
+  </div>
+  <div class="hero__side">
+    <div class="hero__photo"><figure class="shot"><img src="images/hero.jpg" alt="Залізо та вільна вага у залі «Територія Сили»" fetchpriority="high"></figure></div>
+    <div class="hero__stat"><b>100+</b><span>м² простору для силових тренувань</span></div>
+    <div class="hero__stat"><b>60+</b><span>одиниць нового обладнання</span></div>
+    <div class="hero__stat"><b>07:00–22:00</b><span>щодня, без вихідних</span></div>
+  </div>
+</section>
+
+<!-- ============================ ПЕРЕВАГИ ============================ -->
+<section id="zal" class="section">
+  <div class="sec-head">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title">Усе, щоб ти тренувався у своєму темпі</h2>
+    <span class="sec-rule"></span>
+  </div>
+  <div class="adv-grid">
+    <div class="adv-card"><div class="adv-card__num">01</div><div class="adv-card__title">Вільна вага</div><p class="adv-card__text">Штанги, гантелі до 50 кг, стійки та помости — для базових вправ, силових програм і поступового прогресу.</p></div>
+    <div class="adv-card"><div class="adv-card__num">02</div><div class="adv-card__title">Нове обладнання</div><p class="adv-card__text">Тренуйся спокійно на новому справному обладнанні, яке не відволікає від техніки та результату.</p></div>
+    <div class="adv-card"><div class="adv-card__num adv-card__num--hot">03</div><div class="adv-card__title">Армреслінг-зона</div><p class="adv-card__text">Професійний стіл, тренування та регулярні турніри. Можеш спробувати вперше або готуватися до змагань.</p></div>
+    <div class="adv-card"><div class="adv-card__num">04</div><div class="adv-card__title">Настільний теніс</div><p class="adv-card__text">Перемкнися між підходами, розімнися або зіграй із друзями. Для власників абонемента — без додаткової оплати.</p></div>
+    <div class="adv-card"><div class="adv-card__num">05</div><div class="adv-card__title">Тренери</div><p class="adv-card__text">Допоможуть поставити техніку й скласти програму під твою ціль, досвід і графік — без нав'язаних послуг.</p></div>
+    <div class="adv-card"><div class="adv-card__num">06</div><div class="adv-card__title">Дієтолог</div><p class="adv-card__text">Отримай зрозумілий план харчування для набору маси, зниження ваги або підтримання форми — з урахуванням бюджету та звичного раціону.</p></div>
+    <div class="adv-card adv-card--wide">
+      <div class="adv-wide__head"><span class="adv-card__num adv-card__num--hot">07</span><span class="adv-wide__title">Боксерський куток</span></div>
+      <p class="adv-wide__text">Важка груша, лапи, рукавиці й місце для роботи в парах. Постав удар, покращ витривалість або зніми напругу після робочого дня.</p>
+      <a href="#boks" class="adv-wide__link">Докладніше →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ АБОНЕМЕНТИ ============================ -->
+<section id="abonementy" class="section">
+  <div class="sec-head">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title">Обери абонемент під свій графік</h2>
+    <span class="sec-rule"></span>
+    <span class="sec-note">Ціни в грн · оплата карткою за посиланням</span>
+  </div>
+  <div class="price-grid">
+    <div class="price-card">
+      <div class="price-plan">Разове</div>
+      <div class="price-amount">150 <small>грн</small></div>
+      <p class="price-desc">Хочеш спочатку спробувати зал або тренуєшся час від часу? Оплачуй одне відвідування й користуйся доступними зонами без абонемента.</p>
+      <button type="button" class="btn btn--outline btn--block" style="padding:12px" data-open="buy" data-tariff="0">Оформити</button>
+    </div>
+    <div class="price-card price-card--popular">
+      <div class="price-badge">Популярний</div>
+      <div class="price-plan">Місяць</div>
+      <div class="price-amount price-amount--hot">700 <small>грн</small></div>
+      <p class="price-desc">Безлімітний доступ на 30 днів. Приходь у зручний час і тренуйся стільки, скільки потрібно для твоєї програми.</p>
+      <button type="button" class="btn btn--primary btn--block" style="padding:14px" data-open="buy" data-tariff="1">Оформити</button>
+    </div>
+    <div class="price-card">
+      <div class="price-plan">3 місяці</div>
+      <div class="price-amount">1900 <small>грн</small></div>
+      <p class="price-desc">90 днів безлімітних тренувань за вигіднішою ціною. За потреби абонемент можна заморозити до 14 днів.</p>
+      <button type="button" class="btn btn--outline btn--block" style="padding:12px" data-open="buy" data-tariff="2">Оформити</button>
+    </div>
+    <div class="price-card">
+      <div class="price-plan">Рік</div>
+      <div class="price-amount">6500 <small>грн</small></div>
+      <p class="price-desc">Найвигідніший формат для системних тренувань: 12 місяців безлімітного доступу та до 30 днів заморозки.</p>
+      <button type="button" class="btn btn--outline btn--block" style="padding:12px" data-open="buy" data-tariff="3">Оформити</button>
+    </div>
+  </div>
+
+  <!-- Ветеранський спорт -->
+  <div class="vet-cta">
+    <div>
+      <div style="margin-bottom:8px"><span class="badge-vet">Ветеранський спорт</span></div>
+      <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
+        <div class="vet-name">Пакет «Ветеранський»</div>
+        <div class="vet-price">1500 <small>грн</small></div>
+      </div>
+      <p style="margin:10px 0 0;font-size:14px;color:var(--muted);line-height:1.55;max-width:620px">Скористайся коштами програми «Ветеранський спорт»: отримай безлімітний абонемент на 30 днів, а решту суми використай на спортивне харчування в залі. Оплата — Дія.Карткою за посиланням. За умови достатнього балансу на картці власна доплата не потрібна.</p>
+    </div>
+    <button type="button" class="btn btn--vet btn--lg" data-open="vet">Оформити за Дія.Карткою</button>
+  </div>
+  <div class="vet-steps">
+    <div class="vet-steps__head">Як оплатити<br>Дія.Карткою</div>
+    <div class="vet-steps__cell"><b>1.</b> Залиш заявку та вкажи номер телефону і зручний месенджер.</div>
+    <div class="vet-steps__cell"><b>2.</b> Ми підтвердимо склад пакета й надішлемо посилання на оплату у Viber або Telegram.</div>
+    <div class="vet-steps__cell"><b>3.</b> Оплати Дія.Карткою та приходь на перше тренування.</div>
+  </div>
+</section>
+
+<!-- ============================ ТРЕНУВАННЯ ============================ -->
+<section id="trenuvannya" class="section">
+  <div class="sec-head">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title">Індивідуальні тренування під твою ціль</h2>
+    <span class="sec-rule"></span>
+  </div>
+  <p class="lede" style="max-width:640px;margin-bottom:36px">Не знаєш, з чого почати, повертаєшся після перерви або хочеш швидше прогресувати? Тренер оцінить твій рівень, допоможе поставити техніку й складе програму під твою ціль.</p>
+  <div class="split-2">
+    <div class="pricelist">
+      <div class="pl-row"><span class="pl-name">Разове тренування з тренером</span><span class="pl-dots"></span><span class="pl-price">300 грн</span></div>
+      <div class="pl-row"><span class="pl-name">5 тренувань</span><span class="pl-dots"></span><span class="pl-price">1400 грн</span></div>
+      <div class="pl-row"><span class="pl-name">10 тренувань</span><span class="pl-dots"></span><span class="pl-price">2600 грн</span></div>
+      <div class="pl-row"><span class="pl-name">Програма тренувань (без супроводу)</span><span class="pl-dots"></span><span class="pl-price">500 грн</span></div>
+      <button type="button" class="btn btn--primary btn--lg" style="margin-top:28px;align-self:flex-start" data-open="trainer">Підібрати тренера</button>
+    </div>
+    <div class="photo" style="height:340px"><figure class="shot"><img src="images/trainer.jpg" alt="Тренер працює з клієнтом" loading="lazy"></figure></div>
+  </div>
+</section>
+
+<!-- ============================ БОКС ============================ -->
+<section id="boks" class="section boks">
+  <div class="sec-head">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title">Боксерський куток для техніки й витривалості</h2>
+    <span class="sec-rule"></span>
+    <span class="sec-note">Груша · спаринг · лапи</span>
+  </div>
+  <div class="boks-grid">
+    <div class="boks-photo"><figure class="shot"><img src="images/boxing.jpg" alt="Спаринг у боксерському кутку залу «Територія Сили»" loading="lazy"></figure></div>
+    <div class="boks-body">
+      <p class="lede">Хочеш поставити базовий удар, урізноманітнити кардіо або скинути напругу після роботи? У залі є окрема зона з важкою грушею, лапами, рукавицями та місцем для роботи в парах. Почати можна навіть без досвіду.</p>
+      <div class="boks-feats">
+        <div class="boks-feat"><span class="boks-feat__num">01</span><div><div class="boks-feat__title">Важка груша</div><p class="boks-feat__text">Відпрацьовуй комбінації, координацію та витривалість у своєму темпі.</p></div></div>
+        <div class="boks-feat"><span class="boks-feat__num">02</span><div><div class="boks-feat__title">Робота в парах</div><p class="boks-feat__text">Зона з покриттям підходить для технічної роботи в парах і легких спарингів під контролем тренера.</p></div></div>
+        <div class="boks-feat"><span class="boks-feat__num">03</span><div><div class="boks-feat__title">Лапи та рукавиці</div><p class="boks-feat__text">Базовий інвентар уже в залі. Тренер допоможе поставити удар, захист і правильну дистанцію, навіть якщо ти починаєш із нуля.</p></div></div>
+      </div>
+      <div class="boks-actions">
+        <button type="button" class="btn btn--primary btn--lg" data-open="first">Спробувати на першому</button>
+        <button type="button" class="btn btn--outline" style="padding:14px 30px;font-size:15px" data-open="trainer">Тренер з боксу</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ДІЄТОЛОГ + СПОРТПИТ ============================ -->
+<section id="dietolog" class="section two-col">
+  <div>
+    <div class="sec-head" style="margin-bottom:32px">
+      <span class="sec-num">05</span>
+      <h2 class="sec-title">Харчування, яке підтримує твою ціль</h2>
+    </div>
+    <p class="lede">Тренування дають більше, коли харчування відповідає твоїй цілі. Дієтолог допоможе скласти реалістичний раціон для набору м'язової маси, зниження ваги або підтримання форми — з урахуванням твого бюджету, графіка та звичних продуктів.</p>
+    <div class="pricelist" style="max-width:480px">
+      <div class="pl-row pl-row--sm"><span class="pl-name">Первинна консультація</span><span class="pl-price">600 грн</span></div>
+      <div class="pl-row pl-row--sm"><span class="pl-name">Супровід — місяць</span><span class="pl-price">1200 грн</span></div>
+    </div>
+    <button type="button" class="btn btn--accent" style="margin-top:28px;padding:14px 30px;font-size:15px" data-open="diet">Записатися до дієтолога</button>
+  </div>
+  <div id="sportpit" class="panel">
+    <div class="sec-head" style="margin-bottom:20px">
+      <span class="sec-num">06</span>
+      <h2 class="sec-title" style="font-size:28px">Спортивне харчування без випадкових покупок</h2>
+    </div>
+    <p style="margin:0 0 20px;font-size:15px;color:var(--muted);line-height:1.6">На рецепції можна придбати протеїн, креатин, амінокислоти, ізотоніки та батончики. Допоможемо обрати продукт під твою ціль і пояснимо, як його використовувати. У продажу — перевірені бренди.</p>
+    <div class="tag-row" style="margin-bottom:24px">
+      <span class="tag">Протеїн</span><span class="tag">Креатин</span><span class="tag">Гейнер</span><span class="tag">Амінокислоти</span><span class="tag">Батончики</span>
+    </div>
+    <button type="button" class="btn btn--light" style="padding:14px 28px" data-open="supp">Підібрати спортивне харчування</button>
+  </div>
+</section>
+
+<!-- ============================ ЗАМОРОЗКА ============================ -->
+<section class="band">
+  <div class="band__title">Постав тренування на паузу —<br>не втрачай оплачені дні</div>
+  <p class="band__text">Відрядження, хвороба чи служба можуть змінити плани. Заморозь абонемент щонайменше на 7 днів: до 14 днів для абонемента на 3 місяці та до 30 днів для річного. Період заморозки буде додано до строку дії абонемента.</p>
+  <button type="button" class="btn btn--ghost" style="padding:14px 30px;font-size:15px" data-open="freeze">Оформити заморозку</button>
+</section>
+
+<!-- ============================ СПІЛЬНОТА ============================ -->
+<section class="section">
+  <div class="sec-head">
+    <span class="sec-num">07</span>
+    <h2 class="sec-title">Тренуйся. Змагайся. Знайомся.</h2>
+    <span class="sec-rule"></span>
+  </div>
+  <div class="grid-3">
+    <div class="com-card">
+      <div class="com-card__media"><figure class="shot"><img src="images/arm.jpg" alt="Армреслінг за столом" loading="lazy"></figure></div>
+      <div class="com-card__body"><div class="com-card__title">Армреслінг-турніри</div><p class="com-card__text">Щомісяця проводимо дружній турнір з армреслінгу. Перевір силу, отримай новий досвід і познайомся з людьми, які теж люблять спорт. Переможець отримує місяць тренувань у подарунок.</p></div>
+    </div>
+    <div class="com-card">
+      <div class="com-card__media"><figure class="shot"><img src="images/tennis.jpg" alt="Настільний теніс у залі" loading="lazy"></figure></div>
+      <div class="com-card__body"><div class="com-card__title">Тенісні вечори</div><p class="com-card__text">Грай у настільний теніс за наявності вільного столу. Раз на місяць проводимо міні-лігу для власників абонемента.</p></div>
+    </div>
+    <div class="friend-card">
+      <div class="friend-card__kicker">Приведи друга</div>
+      <div class="friend-card__head">Друг купує місяць —<br>ти отримуєш +7 днів</div>
+      <p class="com-card__text">Коли твій друг оформить місячний абонемент і назве тебе на рецепції, ми додамо 7 днів до строку дії твого абонемента.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ГРАФІК ============================ -->
+<section id="grafik" class="section sched">
+  <div class="sec-head" style="margin-bottom:0">
+    <span class="sec-num">08</span>
+    <h2 class="sec-title">Графік<br>роботи</h2>
+  </div>
+  <div class="sched-grid">
+    <div class="sched-card"><div class="sched-card__label">Будні</div><div class="sched-card__time">07:00–22:00</div></div>
+    <div class="sched-card"><div class="sched-card__label">Субота — неділя</div><div class="sched-card__time">08:00–20:00</div></div>
+  </div>
+</section>
+
+<!-- ============================ ГАЛЕРЕЯ ============================ -->
+<section class="gallery" aria-label="Галерея залу">
+  <div class="gallery__cell"><figure class="shot"><img src="images/gallery-1.jpg" alt="Зал «Територія Сили» — простір і обладнання" loading="lazy"></figure></div>
+  <div class="gallery__cell"><figure class="shot"><img src="images/gallery-2.jpg" alt="Зал «Територія Сили» — боксерська зона" loading="lazy"></figure></div>
+  <div class="gallery__cell"><figure class="shot"><img src="images/gallery-3.jpg" alt="Зал «Територія Сили» — функціональна зона" loading="lazy"></figure></div>
+  <div class="gallery__cell"><figure class="shot"><img src="images/gallery-4.jpg" alt="Зал «Територія Сили» — штанга й помости" loading="lazy"></figure></div>
+  <div class="gallery__cell"><figure class="shot"><img src="images/gallery-5.jpg" alt="Зал «Територія Сили» — диски та вільна вага" loading="lazy"></figure></div>
+  <div class="gallery__cell"><figure class="shot"><img src="images/gallery-6.jpg" alt="Зал «Територія Сили» — штанга під навантаженням" loading="lazy"></figure></div>
+</section>
+
+<!-- ============================ КОНТАКТИ ============================ -->
+<section id="kontakty" class="section contacts">
+  <div>
+    <div class="sec-head" style="margin-bottom:36px">
+      <span class="sec-num">09</span>
+      <h2 class="sec-title">Контакти</h2>
+    </div>
+    <div class="contact-list">
+      <div class="contact-row"><span class="contact-row__k">Адреса</span><span>м. Броди, вул. [Вулиця, №] <span class="faint">(уточнюється)</span></span></div>
+      <div class="contact-row"><span class="contact-row__k">Телефон</span><a href="tel:+380670000000">+380 67 000 00 00</a></div>
+      <div class="contact-row"><span class="contact-row__k">E-mail</span><a href="mailto:info@terytoriyasyly.com">info@terytoriyasyly.com</a></div>
+    </div>
+    <button type="button" class="btn btn--outline" style="margin-top:28px;padding:14px 30px;font-size:15px" data-open="ask">Задати питання</button>
+  </div>
+  <div class="map">
+    <iframe src="https://maps.google.com/maps?q=%D0%91%D1%80%D0%BE%D0%B4%D0%B8,%20%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C&z=14&output=embed" title="Мапа: м. Броди" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- ============================ ФУТЕР ============================ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div>
+      <div class="footer__brand">
+        <svg width="28" height="28" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" fill="none" stroke="#EDEAE3" stroke-width="4"></circle><circle cx="18" cy="18" r="5.5" fill="#E8471C"></circle></svg>
+        <span>ТЕРИТОРІЯ СИЛИ</span>
+      </div>
+      <div class="footer__badge">Тут є Ветеранський спорт</div>
+    </div>
+    <div class="footer__req">
+      <div class="footer__label">Реквізити</div>
+      ФОП [Прізвище Ім'я По батькові]<br>РНОКПП: [0000000000]<br>Юр. адреса: [адреса]<br>Факт. адреса: м. Броди, вул. [Вулиця, №]<br>Тел.: +380 67 000 00 00 · info@terytoriyasyly.com<br>Оплата: карткою Visa/Mastercard через WayForPay, ціни в грн (UAH)
+    </div>
+    <div>
+      <div class="footer__label">Документи</div>
+      <div class="footer__docs">
+        <a href="oferta.html">Публічна оферта</a>
+        <a href="refund.html">Правила повернення коштів</a>
+        <a href="terms.html">Умови надання послуг</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Територія Сили, м. Броди</span>
+    <span>Заходь слабким — виходь сильним</span>
+  </div>
+</footer>
+
+<!-- ============================ МОДАЛКА (заявка) ============================ -->
+<div id="overlay" class="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="main.js" defer></script>
+</body>
+</html>
