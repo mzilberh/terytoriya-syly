@@ -22,6 +22,12 @@
   var TARIFFS = ['Разове — 150 грн', 'Місяць — 700 грн', '3 місяці — 1900 грн', 'Рік — 6500 грн'];
   var DEFAULT_TARIFF = 1; // Місяць
 
+  /* --- Lead delivery (Web3Forms) ------------------------------------------
+     Заявки надсилаються на e-mail через web3forms.com (безкоштовно, без сервера).
+     Отримай Access Key для prosanit.exp@gmail.com на https://web3forms.com
+     (введи пошту — ключ прийде листом) і встав його замість плейсхолдера нижче. */
+  var WEB3FORMS_KEY = '12c87d37-d969-44f8-84e9-7174961d1d7c';
+
   var overlay = document.getElementById('overlay');
   var content = document.getElementById('modalContent');
   var opener = null;
@@ -86,7 +92,8 @@
         '<label class="check-row"><input type="checkbox" name="consent"><span>Погоджуюся на обробку персональних даних згідно з <a href="terms.html" target="_blank" rel="noopener">політикою</a> *</span></label>' +
         '<div class="field-error" data-err="consent" hidden>Потрібна згода на обробку даних</div>' +
         '<button type="submit" class="btn btn--primary" style="padding:15px">Надіслати заявку</button>' +
-        '<div class="modal-note">Заявка впаде нам на пошту і в Telegram. Скинемо тобі посилання на оплату — і все.</div>' +
+        '<div class="field-error" data-send-error hidden style="margin-top:4px;text-align:center">Не вдалося надіслати. Перевір інтернет і спробуй ще раз.</div>' +
+        '<div class="modal-note">Заявка надійде нам на пошту — передзвонимо і надішлемо посилання на оплату.</div>' +
       '</form>';
   }
 
@@ -150,17 +157,55 @@
       return;
     }
 
-    // Collect the lead. In production: POST to a Worker/endpoint that
-    // e-mails the gym, pings the Telegram bot, and returns a WayForPay link.
-    var payload = {};
+    // Build a human-readable lead and send it to e-mail via Web3Forms.
+    var LABELS = {
+      name: "Ім'я", phone: 'Телефон', contact: 'E-mail / Telegram',
+      tariff: 'Тариф', date: 'Бажана дата / час', trainer: 'Тренер / зручний час',
+      consType: 'Тип консультації', days: 'Днів заморозки', member: 'Абонемент / на кого',
+      pack: 'Пакет', vetFlag: 'Учасник «Ветеранський спорт»', comment: 'Коментар'
+    };
+    var title = form.querySelector('.modal__title').textContent;
+    var data = {
+      access_key: WEB3FORMS_KEY,
+      subject: 'Нова заявка: ' + title + (name ? ' — ' + name : ''),
+      from_name: 'Сайт «Територія Сили»',
+      'Заявка': title
+    };
     Array.prototype.forEach.call(form.elements, function (el) {
-      if (!el.name || el.name === 'company') return;
-      payload[el.name] = (el.type === 'checkbox') ? el.checked : el.value;
+      if (!el.name || !LABELS[el.name]) return;
+      var v = (el.type === 'checkbox') ? (el.checked ? 'так' : 'ні') : el.value;
+      if (v !== '' && v != null) data[LABELS[el.name]] = v;
     });
-    payload.title = form.querySelector('.modal__title').textContent;
-    console.log('[Територія Сили] Нова заявка:', payload);
+    data['Згода на обробку даних'] = 'так';
+    var contact = form.elements.contact ? form.elements.contact.value : '';
+    if (contact && contact.indexOf('@') > -1) data.replyto = contact;
 
-    content.innerHTML = successHTML();
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var sendErr = form.querySelector('[data-send-error]');
+    if (sendErr) sendErr.hidden = true;
+
+    // Key not set yet — thank the user instead of showing a scary error.
+    if (WEB3FORMS_KEY === 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY') {
+      console.warn('[Територія Сили] Web3Forms KEY не налаштований — лист НЕ надіслано.', data);
+      content.innerHTML = successHTML();
+      return;
+    }
+
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Надсилаємо…'; submitBtn.style.opacity = '.7'; }
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res && res.success) { content.innerHTML = successHTML(); }
+        else { throw new Error((res && res.message) || 'send failed'); }
+      })
+      .catch(function () {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Надіслати заявку'; submitBtn.style.opacity = ''; }
+        if (sendErr) sendErr.hidden = false;
+      });
   }
 
   /* --- Global event wiring ------------------------------------------------- */
