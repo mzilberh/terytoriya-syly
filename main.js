@@ -88,7 +88,7 @@
         '<input class="field" name="contact" placeholder="E-mail або Telegram-нік (необов\'язково)">' +
         fieldsFor(type, tariffIndex) +
         '<textarea class="field" name="comment" rows="3" placeholder="' + f.comment + '"></textarea>' +
-        '<input class="honeypot" name="company" tabindex="-1" autocomplete="off" placeholder="Не заповнюйте це поле" aria-hidden="true">' +
+        '<input class="honeypot" name="_hp" tabindex="-1" autocomplete="off" placeholder="Не заповнюйте це поле" aria-hidden="true">' +
         '<label class="check-row"><input type="checkbox" name="consent"><span>Погоджуюся на обробку персональних даних згідно з <a href="terms.html" target="_blank" rel="noopener">політикою</a> *</span></label>' +
         '<div class="field-error" data-err="consent" hidden>Потрібна згода на обробку даних</div>' +
         '<button type="submit" class="btn btn--primary" style="padding:15px">Надіслати заявку</button>' +
@@ -102,7 +102,7 @@
       '<div class="modal-success">' +
         '<div class="modal-success__icon">✓</div>' +
         '<div class="modal-success__title">Дякуємо!</div>' +
-        '<p>Спіймали заявку. Скоро наберемо і скинемо посилання на оплату.</p>' +
+        '<p>Заявку надіслано. Найближчим часом з вами звʼяжеться менеджер для оплати абонемента.</p>' +
         '<button type="button" class="btn btn--outline" style="padding:12px 28px" data-close>Закрити</button>' +
       '</div>';
   }
@@ -133,8 +133,8 @@
     e.preventDefault();
     var form = e.currentTarget;
 
-    // honeypot — silently drop bots
-    if (form.elements.company && form.elements.company.value) { closeForm(); return; }
+    // honeypot — silently drop bots (neutral name so browser autofill never fills it)
+    if (form.elements['_hp'] && form.elements['_hp'].value) { closeForm(); return; }
 
     var name = (form.elements.name.value || '').trim();
     var digits = (form.elements.phone.value || '').replace(/[\s\-()+]/g, '');
