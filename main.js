@@ -164,7 +164,7 @@
       consType: 'Тип консультації', days: 'Днів заморозки', member: 'Абонемент / на кого',
       pack: 'Пакет', vetFlag: 'Учасник «Ветеранський спорт»', comment: 'Коментар'
     };
-    var title = form.querySelector('.modal__title').textContent;
+    var title = content.querySelector('.modal__title').textContent;
     var data = {
       access_key: WEB3FORMS_KEY,
       subject: 'Нова заявка: ' + title + (name ? ' — ' + name : ''),
